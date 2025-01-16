@@ -24,8 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

@@ -1,29 +1,27 @@
-"use client";
-
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
 import Link from "next/link";
 import Card from "./components/card";
 
-export default function Home() {
-  const [show, setShow] = useState<boolean>(false);
+const posts = [
+  {
+    id: "b883b678-a28c-4a44-9901-c6a9f0a5176d",
+    title: "Lost in Tokyo",
+    author: "Jonathan Vik",
+    commentsCount: 8,
+  },
+];
 
+export default function Home() {
   return (
-    <div className="font-sans">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <ul className="mb-16 flex w-full snap-x snap-mandatory gap-x-4 gap-y-12 overflow-x-scroll px-4 md:grid md:grid-cols-2 md:px-8 lg:grid-cols-3">
-          <li className="flex w-11/12 shrink-0 snap-center flex-col md:w-full">
-            <Card />
-          </li>
-          <li className="flex w-11/12 shrink-0 snap-center flex-col md:w-full">
-            <Card />
-          </li>
-          <li className="flex w-11/12 shrink-0 snap-center flex-col md:w-full">
-            <Card />
-          </li>
-        </ul>
-      </main>
-    </div>
+    <main className="font-sans flex flex-col items-center p-8 gap-4">
+      <p>
+        <span className="font-semibold">Shared</span> by you
+      </p>
+
+      {posts?.map((post) => (
+        <Card key={post.id} content={post} />
+      ))}
+    </main>
   );
 }
