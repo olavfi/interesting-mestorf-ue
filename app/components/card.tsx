@@ -6,32 +6,21 @@ import Link from "next/link";
 import { BiExpandAlt } from "react-icons/bi";
 
 const Card = ({ content }) => {
+  const { title, image, description, id, slug } = content;
+
   return (
     <div className="flex flex-col gap-4 items-center text-center">
-      <motion.figure
-        layoutId="expandable-card"
-        // initial state opacity
-        //animation of component appearence
-        // how your element will appears f.e(duration in seconds)
-      >
-        <Image
-          src="https://picsum.photos/id/46/1080/1080"
-          width={360}
-          height={360}
-          alt={""}
-        />
+      <motion.figure layoutId={id}>
+        <Image src={image} width={360} height={360} alt={""} />
       </motion.figure>
       <motion.div
         exit={{ opacity: 0 }}
         className="flex flex-col gap-4 items-center"
       >
-        <h2 className="text-4xl font-bold">Lost in Tokyo</h2>
-        <p className="max-w-[32ch]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus
-          volutpat libero, eget feugiat elit.
-        </p>
+        <h2 className="text-4xl font-bold">{title}</h2>
+        <p className="max-w-[32ch]">{description}</p>
 
-        <Link href="/posts/something">
+        <Link href={slug}>
           <div className="bg-black rounded-full max-w-fit p-4">
             <BiExpandAlt style={{ color: "white" }} />
           </div>
