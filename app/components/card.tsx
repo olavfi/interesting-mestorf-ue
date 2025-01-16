@@ -1,17 +1,24 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { BiExpandAlt } from "react-icons/bi";
+import { Post } from "../types";
 
-const Card = ({ content }) => {
+const Card = ({ content }: { content: Post }) => {
   const { title, image, description, id, slug } = content;
 
   return (
     <div className="flex flex-col gap-4 items-center text-center">
       <motion.figure layoutId={id}>
-        <Image src={image} width={360} height={360} alt={""} />
+        <Image
+          src={image}
+          width={360}
+          height={360}
+          alt={""}
+          className="object-cover"
+        />
       </motion.figure>
       <motion.div
         exit={{ opacity: 0 }}

@@ -1,9 +1,10 @@
 "use client";
+
+import { motion } from "motion/react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "motion/react";
-import { BiSolidComment } from "react-icons/bi";
+import { usePathname, useRouter } from "next/navigation";
 import { AiOutlineClose } from "react-icons/ai";
-import { useRouter, usePathname } from "next/navigation";
+import { BiSolidComment } from "react-icons/bi";
 import posts from "../posts.json";
 
 const Post = () => {
@@ -12,16 +13,16 @@ const Post = () => {
 
   const post = posts.find((post) => post.slug === pathname);
 
-  console.log("POST:", post);
-
   const handleClick = () => {
-    router.back();
+    router.push("/", { scroll: true });
   };
 
   return (
     <section className="h-svh flex flex-col overflow-hidden text-white relative">
       <motion.figure layoutId={post?.id} className="h-svh">
-        <Image src={post?.image} fill alt={""} />
+        {post?.image && (
+          <Image src={post.image} fill alt={""} className="object-cover" />
+        )}
       </motion.figure>
 
       <div className="absolute flex h-svh w-full flex-col gap-4 justify-between px-4 py-8">

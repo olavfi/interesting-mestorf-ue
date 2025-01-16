@@ -1,20 +1,11 @@
 [{
     "id": "b883b678-a28c-4a44-9901-c6a9f0a5176d",
     "slug": "/posts/lost-in-tokyo",
-    "title": "Lost in Tokyo",
+    "title": "Lorem Ipsum",
     "description":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus volutpat libero, eget feugiat elit.",
     "image": "https://picsum.photos/id/46/1080/1080",
     "author": "Jonathan Vik",
     "commentsCount": 8
-  },
-  {
-    "id": "7d22dbdf-096f-4bfc-ae80-e940ad8a32d6",
-    "title": "Lost in Tuscany",
-    "slug": "/posts/lost-in-tuscany",
-    "description":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus volutpat libero, eget feugiat elit.",
-    "image": "https://picsum.photos/id/47/1080/1080",
-    "author": "Jonathan Junker",
-    "commentsCount": 8
-  }]
+  }
+]
