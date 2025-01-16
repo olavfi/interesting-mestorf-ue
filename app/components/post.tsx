@@ -25,7 +25,7 @@ const Post = () => {
         )}
       </motion.figure>
 
-      <div className="absolute flex h-svh w-full flex-col gap-4 justify-between px-4 py-8">
+      <div className="absolute flex h-svh w-full flex-col gap-4 justify-between p-8">
         <button onClick={handleClick}>
           <AiOutlineClose />
         </button>
@@ -35,7 +35,7 @@ const Post = () => {
             initial={{ y: -96 }}
             animate={{ y: 0 }}
             transition={{ type: "spring", bounce: 0.4, delay: 0.1 }}
-            className="text-7xl leading-[0.9] font-bold"
+            className="text-7xl leading-[0.9] font-bold mb-4"
           >
             {post?.title}
           </motion.h2>
